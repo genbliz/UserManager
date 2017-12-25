@@ -1,8 +1,16 @@
-var express = require('express');
+var express = require("express");
 var app = express();
-var db = require('./db');
+var db = require("./db");
 
-var UserController = require('./user/UserController');
-app.use('/users', UserController);
+console.log("App Seen!!");
+
+var UserController = require("./user/UserController");
+app.use("/users", UserController);
+
+app.get("/", function(req, res) {
+  var msg = `Hello World Challenge @ ${Date.now()}`;
+  console.log(msg);
+  res.send(msg);
+});
 
 module.exports = app;

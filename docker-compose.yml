@@ -1,0 +1,19 @@
+version: '3.2'
+services:
+  app:
+    container_name: app
+    restart: always
+    build: .
+    ports:
+      - '8108:8108'
+    links:
+      - mongoservice
+  mongoservice:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - 'mongodata:/data/db'
+    ports:
+      - '27017:27017'
+volumes:
+  mongodata: null

@@ -1,2 +1,5 @@
 node_modules/
+dumps
 .env
+dcb.bat
+dcr.bat
